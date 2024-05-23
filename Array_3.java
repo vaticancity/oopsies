@@ -1,12 +1,27 @@
+import java.util.Scanner;
+
 public class Array_3 {
     
     public static void main(String[] args) {
-        double[] salaries = {23500.0, 25080.0, 28760.0, 22340.0, 19890.0};
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of salaries: ");
+        int n = scanner.nextInt();
+        
+        double[] salaries = new double[n];
+        
+        System.out.println("Enter the salaries:");
+        for (int i = 0; i < n; i++) {
+            salaries[i] = scanner.nextDouble();
+        }
+        
         double[] result = findDetails(salaries);
         
         System.out.println("Average salary: " + result[0]);
         System.out.println("Number of salaries greater than the average salary: " + result[1]);
         System.out.println("Number of salaries lesser than the average salary: " + result[2]);
+        
+        scanner.close();
     }
     
     public static double[] findDetails(double[] salaries) {
